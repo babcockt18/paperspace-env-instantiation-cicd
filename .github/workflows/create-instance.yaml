@@ -15,7 +15,7 @@ jobs:
 
       - name: Set up Paperspace CLI
         run: |
-          curl -fsSL https://get.paperspace.io/cli/install.sh | sh
+          curl -fsSL https://dashboard.paperspace.com/install.sh | sh
           paperspace login --email ${{ secrets.PAPERSPACE_EMAIL }} --password ${{ secrets.PAPERSPACE_PASSWORD }}
 
       - name: Create Paperspace Instance
