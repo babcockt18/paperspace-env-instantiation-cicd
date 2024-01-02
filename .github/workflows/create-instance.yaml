@@ -18,11 +18,11 @@ jobs:
           curl -fsSL https://console.paperspace.com/install.sh | sh
           echo "export PATH=\$PATH:$(pwd)/pspace" >> ~/.bashrc
           source ~/.bashrc
-          paperspace login --email ${{ secrets.PAPERSPACE_EMAIL }} --password ${{ secrets.PAPERSPACE_PASSWORD }}
+          pspace login --email ${{ secrets.PAPERSPACE_EMAIL }} --password ${{ secrets.PAPERSPACE_PASSWORD }}
 
       - name: Create Paperspace Instance
         run: |
-          paperspace machines create \
+          pspace machines create \
             --region "East Coast (NY2)" \
             --machineType "GPU+" \
             --size 50 \
