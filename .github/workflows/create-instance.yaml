@@ -1,0 +1,31 @@
+name: Create Paperspace Instance
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-instance:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Paperspace CLI
+        run: |
+          curl -fsSL https://get.paperspace.io/cli/install.sh | sh
+          paperspace login --email ${{ secrets.PAPERSPACE_EMAIL }} --password ${{ secrets.PAPERSPACE_PASSWORD }}
+
+      - name: Create Paperspace Instance
+        run: |
+          paperspace machines create \
+            --region "East Coast (NY2)" \
+            --machineType "GPU+" \
+            --size 50 \
+            --template "Ubuntu 22.04" \
+            --assignPublicIp true \
+            --apiKey ${{ secrets.PAPERSPACE_API_KEY }}
+
+      # Additional steps for configuring the instance and running tests can be added here
