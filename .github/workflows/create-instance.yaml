@@ -22,9 +22,9 @@ jobs:
         run: |
           paperspace machines create \
             --region "East Coast (NY2)" \
-            --machineType "Air" \
-            --size "Medium" \
-            --template "Ubuntu 18.04" \
+            --machineType "GPU+" \
+            --size 50 \
+            --template "Ubuntu 22.04" \
             --assignPublicIp true \
             --apiKey ${{ secrets.PAPERSPACE_API_KEY }}
 
