@@ -19,7 +19,7 @@ jobs:
           export PAPERSPACE_INSTALL="/home/runner/.paperspace"
           export PATH="$PAPERSPACE_INSTALL/bin:$PATH"
           echo $PATH
-          # pspace login --email ${{ secrets.PAPERSPACE_EMAIL }} --password ${{ secrets.PAPERSPACE_PASSWORD }}
+          pspace login --api-key ${{ secrets.PAPERSPACE_API_KEY }}
 
       - name: Create Paperspace Instance
         run: |
