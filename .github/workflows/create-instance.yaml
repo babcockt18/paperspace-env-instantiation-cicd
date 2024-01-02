@@ -19,6 +19,7 @@ jobs:
           echo "export PAPERSPACE_INSTALL=\"/home/runner/.paperspace\"" >> ~/.bashrc
           echo "export PATH=\"\$PAPERSPACE_INSTALL/bin:\$PATH\"" >> ~/.bashrc
           source ~/.bashrc
+          echo $PATH
           pspace login --email ${{ secrets.PAPERSPACE_EMAIL }} --password ${{ secrets.PAPERSPACE_PASSWORD }}
 
       - name: Create Paperspace Instance
