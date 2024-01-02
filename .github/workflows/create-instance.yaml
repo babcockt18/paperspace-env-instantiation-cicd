@@ -16,9 +16,8 @@ jobs:
       - name: Set up Paperspace CLI
         run: |
           curl -fsSL https://console.paperspace.com/install.sh | sh
-          echo "export PAPERSPACE_INSTALL=\"/home/runner/.paperspace\"" >> ~/.bashrc
-          echo "export PATH=\"\$PAPERSPACE_INSTALL/bin:\$PATH\"" >> ~/.bashrc
-          source ~/.bashrc
+          export PAPERSPACE_INSTALL="/home/runner/.paperspace"
+          export PATH="$PAPERSPACE_INSTALL/bin:$PATH"
           echo $PATH
           pspace login --email ${{ secrets.PAPERSPACE_EMAIL }} --password ${{ secrets.PAPERSPACE_PASSWORD }}
 
