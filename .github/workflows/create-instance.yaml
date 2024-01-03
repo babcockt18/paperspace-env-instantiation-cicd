@@ -19,7 +19,8 @@ jobs:
           export PAPERSPACE_INSTALL="/home/runner/.paperspace"
           export PATH="$PAPERSPACE_INSTALL/bin:$PATH"
           echo $PATH
-          pspace machine start --machineId ${{ secrets.PAPERSPACE_MACHINE_ID }} --apiKey ${{ secrets.PAPERSPACE_API_KEY }}
+          pspace login ${{ secrets.PAPERSPACE_API_KEY }}
+          pspace machine start ${{ secrets.PAPERSPACE_MACHINE_ID }}
           
 
       # Additional steps for configuring the instance and running tests can be added here
