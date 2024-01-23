@@ -7,6 +7,7 @@ This repository contains the code for setting up a Continuous Integration and Co
 ## Usage
 
 To install and use this project, follow these steps below:
+
 *Note: paperspace API access and a static IP setup in paperspace are prerequisites. To get API access and set up the IP, follow the directions [here](https://docs.paperspace.com/core/quick-start/) and [here](https://docs.paperspace.com/core/networking/public-ips/#how-to-assign-a-public-ip) respectively.*
 
 1. Fork and rename the repository to that is the intended use case.
