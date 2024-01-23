@@ -1,4 +1,4 @@
-# Paperspace Environment Instantiation CI/CD
+# Paperspace Compute Activation and Deactivation via GitHub Actions
 
 ## Description
 
